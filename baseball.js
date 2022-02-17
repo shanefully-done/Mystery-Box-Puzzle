@@ -195,7 +195,7 @@ function calc_best_question()
             best_info = sb_info;
         }
     }
-    result_str = "Recommend Answer: " + best_q + ", Score: " + best.toFixed(2);
+    result_str = "추천 조합: " + best_q;
     var count = 0;
     for (var i = 0; i < potential.length; i++)
     {
@@ -208,12 +208,12 @@ function calc_best_question()
             var probability = best_info[key] / best_total * 100;
             var s = key.substr(0, 1);
             var b = key.substr(1, 1);
-            result_str += "\n" + result_formatter(s, b) + ": Count: " + best_info[key] + ", Probability: " + probability.toFixed(2);
+            // result_str += "\n" + result_formatter(s, b) + ": Count: " + best_info[key] + ", Probability: " + probability.toFixed(2);
         }
     }
     if (count <= 1)
     {
-        mainForm.txt_answer.value = "Game Finished! Answer: " + best_q + "\nPress Reset to New Game!";
+        mainForm.txt_answer.value = "게임 끝! 정답은: " + best_q + "\n리셋을 눌러 다시 시작하세요.";
         mainForm.input_S.value = "3";
     }
     else

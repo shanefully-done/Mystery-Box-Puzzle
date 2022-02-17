@@ -1,45 +1,46 @@
 <html>
-    <head>
-        <script type="text/javascript" src="baseball.js"></script>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-112454940-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-112454940-1');
-        </script>
-        <meta charset="utf-8">
-        <title>Bulls and Cows Solver (숫자 야구)</title>
-    </head>
-    <form name="form" id="mainForm">
-        <body>
-            <div id="container" style="width:380px">
-                <div id="header">
-                    <h1>Bulls and Cows Solver</h1>
-                </div>
-                <div id="menu" style="width:230px; height:110px; float:left;">
-                    <br>
-                    <label for="html">Number</label>
-                    <input type="Text" id="input_Q" size=10 maxlength="3" style="font-size:15;">
-                    <input type="button" id="btn_execute" value="Add" onclick="execute()">
-                    <br>
-                    <input type="Text" id = "input_S" size=1 maxlength="1" style="font-size:15;">
-                    <label for="html">Strike</label>
-                    <input type="Text" id = "input_B" size=1  maxlength="1" style="font-size:15;">
-                    <label for="html">Ball</label>
-                    <input type="button" id="btn_Reset" value="Reset" onclick="reset_game()">
-                </div>
-                <div id="hist" style="width:150px; height:100px; float:left;">
-                    <select id="history" size="7" style="width:100%; height:100%">
-                    </select>
-                </div>
-                <div id="footer">
-                    <textarea id="txt_answer" style="width:100%; height:150px; resize:none"></textarea>
-                </div>
-                <div id="real_footer" align="center"><font size="2" color="#999999">Author: blackcat610@github.com<br>Source: https://github.com/blackcat610/Bulls-and-Cows-Solver<br>숫자 야구 인공지능</font></div>
-                <div id="real_real_footer" align="center"><font size="1" color="#999999">본 사이트는 GA를 이용하고 있습니다<br>구글은 이용자에 대한 개인식별이 불가능한 수준의 정보를 수집하며<br>이용자는 GA Opt-out Browser Add-on을 이용하여<br>스스로를 GA에서 배제시킬 수 있습니다</font></div>
+
+<head>
+    <title>알쏭달쏭 상자 열기</title>
+    <link rel="stylesheet" href="normalise.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="baseball.js"></script>
+    <meta charset="utf-8">
+</head>
+<form name="form" id="mainForm">
+
+    <body>
+        <div id="container" class="container">
+            <h1>알쏭달쏭 상자 열기</h1>
+            <div class="row">
+                <textarea id="txt_answer"></textarea>
             </div>
-        </body>
-    </form>
+            <div class="row">
+                <div class="one-third column">입력한 조합</div>
+                <div class="two-thirds column"><input type="Text" id="input_Q" size=10 maxlength="3"></div>
+            </div>
+            <div class="row">
+                <div class="one-third column">● 개수</div>
+                <div class="two-thirds column"><input type="Text" id="input_S" size=1 maxlength="1"></div>
+            </div>
+            <div class="row">
+                <div class="one-third column">▲ 개수</div>
+                <div class="two-thirds column"><input type="Text" id="input_B" size=1 maxlength="1"></div>
+            </div>
+            <div class="row">
+                <div class="one-third column">&nbsp;</div>
+                <div class="two-thirds column"><input type="button" id="btn_execute" value="결과 입력" onclick="execute()"></div>
+            </div>
+            <div class="row">
+                <div class="one-third column">&nbsp;</div>
+                <div class="two-thirds column"><input type="button" id="btn_Reset" value="리셋" onclick="reset_game()"></div>
+            </div>
+            <div class="row">
+                기록
+                <select id="history" size="7"></select>
+            </div>
+        </div>
+    </body>
+</form>
+
 </html>
